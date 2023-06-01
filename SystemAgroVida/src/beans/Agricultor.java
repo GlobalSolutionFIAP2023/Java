@@ -8,4 +8,5 @@ public class Agricultor extends Usuario {
     private String objetivo;
     private String experiencia;
     private List<TecnicaSustentavel> tecnicasSustentaveis;
+
 }
