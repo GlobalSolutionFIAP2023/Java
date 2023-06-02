@@ -21,7 +21,6 @@ public class EstacaoAno {
         this.umidadeMedia = umidadeMedia;
         this.incidenciaSolarMedia = incidenciaSolarMedia;
     }
-
     public EstacaoAno(){}
 
 

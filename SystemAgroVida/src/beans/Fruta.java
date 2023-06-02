@@ -19,7 +19,6 @@ public class Fruta {
         this.tempoDeCrescimento = tempoDeCrescimento;
         this.detalhesDoCultivo = detalhesDoCultivo;
     }
-
     public Fruta(){}
 
 

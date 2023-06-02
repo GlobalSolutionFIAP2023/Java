@@ -21,7 +21,6 @@ public class InseticidaNatural {
         this.componentes = componentes;
         this.modoPreparo = modoPreparo;
     }
-
     public InseticidaNatural(){}
 
 

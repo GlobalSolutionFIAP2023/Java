@@ -1,5 +1,8 @@
 package beans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Adubo {
     // Atributos
     private int idAdubo;
@@ -15,14 +18,25 @@ public class Adubo {
         this.nome = nome;
         this.descricao = descricao;
     }
-
     public Adubo(){}
 
 
 
 
-    // GetterSetter
+    // Métodos
+    public List<Adubo> Adicionar(List<Adubo> adubos, Adubo adubo){
+        adubos.add(adubo);
+        return adubos;
+    }
+    public List<Adubo> Remover(List<Adubo> adubos, Adubo adubo){
+        adubos.remove(adubo);
+        return adubos;
+    }
 
+
+
+
+    // GetterSetter
     public int getIdAdubo() {
         return idAdubo;
     }

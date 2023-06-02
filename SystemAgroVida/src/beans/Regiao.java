@@ -23,7 +23,6 @@ public class Regiao {
         this.solo = solo;
         this.estacaoAno = estacaoAno;
     }
-
     public Regiao(){}
 
 

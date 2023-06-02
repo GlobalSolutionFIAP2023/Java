@@ -3,6 +3,7 @@ package beans;
 import java.util.List;
 
 public class TecnicaPlantio extends Tecnica {
+    // Atributos
     private int idTecnicaPlantio;
     private Double quantAguaUsada;
     private String tempoColheita;

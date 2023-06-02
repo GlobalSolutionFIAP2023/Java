@@ -19,4 +19,32 @@ public class TecnicaSustentavel extends Tecnica {
         this.periodo = periodo;
     }
     public TecnicaSustentavel(){}
+
+
+
+
+    // GetterSetter
+    public int getIdTecnicaSustentavel() {
+        return idTecnicaSustentavel;
+    }
+
+    public void setIdTecnicaSustentavel(int idTecnicaSustentavel) {
+        this.idTecnicaSustentavel = idTecnicaSustentavel;
+    }
+
+    public List<String> getComponentes() {
+        return componentes;
+    }
+
+    public void setComponentes(List<String> componentes) {
+        this.componentes = componentes;
+    }
+
+    public String getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(String periodo) {
+        this.periodo = periodo;
+    }
 }

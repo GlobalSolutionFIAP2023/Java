@@ -2,14 +2,12 @@ package beans;
 
 import java.util.List;
 
-public abstract class Usuario {
+public class Usuario {
     // Atributos
     private String nome;
     private String sobreNome;
     private int idade;
     private String genero;
-    private String login;
-    private String senha;
     private List<Telefone> telefones;
     private Endereco endereco;
 
@@ -17,17 +15,14 @@ public abstract class Usuario {
 
 
     // Construtores
-    public Usuario(String nome, String sobreNome, int idade, String genero, String login, String senha, List<Telefone> telefones, Endereco endereco) {
+    public Usuario(String nome, String sobreNome, int idade, String genero, List<Telefone> telefones, Endereco endereco) {
         this.nome = nome;
         this.sobreNome = sobreNome;
         this.idade = idade;
         this.genero = genero;
-        this.login = login;
-        this.senha = senha;
         this.telefones = telefones;
         this.endereco = endereco;
     }
-
     public Usuario(){}
 
 
@@ -64,22 +59,6 @@ public abstract class Usuario {
 
     public void setGenero(String genero) {
         this.genero = genero;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public List<Telefone> getTelefones() {

@@ -19,7 +19,6 @@ public class Telefone {
         this.ddi = ddi;
         this.operadora = operadora;
     }
-
     public Telefone(){}
 
 

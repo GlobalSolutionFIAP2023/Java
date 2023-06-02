@@ -15,7 +15,6 @@ public class Estado {
         this.nome = nome;
         this.sigla = sigla;
     }
-
     public Estado(){}
 
 
