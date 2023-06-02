@@ -26,6 +26,12 @@ public class Tecnica {
 
 
 
+    // Métodos
+
+
+
+
+
     // GetterSetter
     public int getIdTecnica() {
         return idTecnica;

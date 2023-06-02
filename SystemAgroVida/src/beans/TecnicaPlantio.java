@@ -33,6 +33,25 @@ public class TecnicaPlantio extends Tecnica {
 
 
 
+    // Métodos
+    public List<TecnicaPlantio> Adicionar (List<TecnicaPlantio> tecnicasPlantio, TecnicaPlantio tecnicaPlantio){
+        tecnicasPlantio.add(tecnicaPlantio);
+        return tecnicasPlantio;
+    }
+    // Método com sobrecarga - Um Remove um item especifico o outro remove todos os itens
+    public List<TecnicaPlantio> Remover (List<TecnicaPlantio> tecnicasPlantio, TecnicaPlantio tecnicaPlantio){
+        tecnicasPlantio.remove(tecnicaPlantio);
+        return tecnicasPlantio;
+    }
+    public List<TecnicaPlantio> Remover (List<TecnicaPlantio> tecnicasPlantio){
+        tecnicasPlantio.clear();
+        return tecnicasPlantio;
+    }
+
+
+
+
+
     // GetterSetter
     public int getIdTecnicaPlantio() {
         return idTecnicaPlantio;

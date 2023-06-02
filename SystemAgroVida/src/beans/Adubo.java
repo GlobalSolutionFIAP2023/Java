@@ -28,8 +28,13 @@ public class Adubo {
         adubos.add(adubo);
         return adubos;
     }
+    // Método com sobrecarga
     public List<Adubo> Remover(List<Adubo> adubos, Adubo adubo){
         adubos.remove(adubo);
+        return adubos;
+    }
+    public List<Adubo> Remover(List<Adubo> adubos){
+        adubos.clear();
         return adubos;
     }
 
