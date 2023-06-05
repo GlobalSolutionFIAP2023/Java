@@ -13,29 +13,41 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        // Instanciano o Scanner e o Random
+        // Instanciando o Scanner e o Random
         Scanner scan = new Scanner(System.in);
         Random random = new Random();
 
-        // Iniciando o programa:
+        // Instanciando o usuário/agricultor
+        Agricultor agricultor1 = new Agricultor();
+
+        // Iniciando a simulação:
         System.out.println("Iniciando o cadastro... ");
 
         System.out.println("Insira seu nome: ");
-        String nome = scan.nextLine();
+        agricultor1.setNome(scan.nextLine());
 
         System.out.println("Insira seu sobrenome: ");
-        String sobrenome = scan.nextLine();
+        agricultor1.setSobreNome(scan.nextLine());
 
         System.out.println("Insira seu gênero: ");
-        String genero = scan.nextLine();
+        agricultor1.setGenero(scan.nextLine());
 
         System.out.println("Insira sua idade: ");
-        int idade = scan.nextInt();
+        agricultor1.setIdade(scan.nextInt());
 
         System.out.println("Insira seu cep para o endereço: ");
-        Endereco endereco = new Endereco(random.nextInt(1001), scan.nextLine());
+
+        // Instanciando o endereço
+        Endereco endereco = new Endereco();
+        endereco.setIdEndereco(random.nextInt(1001));
+        endereco.setCep(scan.nextLine());
+        endereco.setCep(scan.nextLine());
+
+        agricultor1.setEndereco(endereco);
 
         System.out.println("Insira seu número de telefone (Sem o DDD ou DDI): ");
+
+        // Instanciando uma lista de telefones e o telefone do usuário
         List<Telefone> listaTelefonica = new ArrayList<>();
         Telefone telefone = new Telefone();
 
@@ -47,21 +59,28 @@ public class Main {
         telefone.setDdi(scan.nextInt());
         System.out.println("Insira sua operadora: ");
         telefone.setOperadora(scan.nextLine());
-
+        telefone.setOperadora(scan.nextLine());
         listaTelefonica.add(telefone);
 
+        agricultor1.setTelefones(listaTelefonica);
+
         System.out.println("Nos conte um pouco do seu objetivo: ");
-        String objetivo = scan.nextLine();
+        agricultor1.setObjetivo(scan.nextLine());
 
         System.out.println("Nos conte sobre sua experiência em plantio: ");
-        String experiencia = scan.nextLine();
+        agricultor1.setExperiencia(scan.nextLine());
 
         System.out.println("Qual técnica sustentável você usa em seu plantio: ");
+
+        // Instanciando uma lista de técnicas sustentáveis e a técnica do usuário
         List<TecnicaSustentavel> listaTecSustentaveis = new ArrayList<>();
-        TecnicaSustentavel tecnicaSustentavel = new TecnicaSustentavel(random.nextInt(), scan.nextLine());
+        TecnicaSustentavel tecnicaSustentavel = new TecnicaSustentavel();
+
+        tecnicaSustentavel.setIdTecnicaSustentavel(random.nextInt());
+        tecnicaSustentavel.setNome(scan.nextLine());
         listaTecSustentaveis.add(tecnicaSustentavel);
 
-        Agricultor agricultor1 = new Agricultor(nome, sobrenome, idade, genero, listaTelefonica, endereco, random.nextInt(1001), objetivo, experiencia, listaTecSustentaveis);
+        agricultor1.setTecnicasSustentaveis(listaTecSustentaveis);
 
         System.out.println(" ");
         System.out.println("Confira suas informações: ");
@@ -74,7 +93,7 @@ public class Main {
         System.out.println("Número do DDD: " + agricultor1.getTelefones().get(0).getDdd());
         System.out.println("Número do DDI: " + agricultor1.getTelefones().get(0).getDdi());
         System.out.println("Operadora do telefone: " + agricultor1.getTelefones().get(0).getOperadora());
-        System.out.println("Endereço/CEP: " + agricultor1.getEndereco());
+        System.out.println("Endereço/CEP: " + agricultor1.getEndereco().getCep());
         System.out.println("Objetivo: " + agricultor1.getObjetivo());
         System.out.println("Experiência: " + agricultor1.getExperiencia());
         System.out.println("Técnica Sustentável: " + agricultor1.getTecnicasSustentaveis().get(0).getNome());

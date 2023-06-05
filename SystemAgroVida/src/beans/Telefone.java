@@ -21,10 +21,6 @@ public class Telefone {
         this.ddi = ddi;
         this.operadora = operadora;
     }
-    public Telefone(int idTelefone, int numero){
-        this.idTelefone = numero;
-        this.numero = numero;
-    }
     public Telefone(){}
 
 

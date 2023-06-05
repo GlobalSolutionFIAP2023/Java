@@ -21,10 +21,6 @@ public abstract class Tecnica {
         this.requisitos = requisitos;
         this.materiaisNecessarios = materiaisNecessarios;
     }
-    public Tecnica(int idTecnica, String nome){
-        this.idTecnica = idTecnica;
-        this.nome = nome;
-    }
     public Tecnica(){}
 
 

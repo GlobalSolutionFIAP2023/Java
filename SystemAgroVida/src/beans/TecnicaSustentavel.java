@@ -18,9 +18,6 @@ public class TecnicaSustentavel extends Tecnica {
         this.componentes = componentes;
         this.periodo = periodo;
     }
-    public TecnicaSustentavel(int idTecnica, String nome){
-        super(idTecnica, nome);
-    }
     public TecnicaSustentavel(){}
 
 

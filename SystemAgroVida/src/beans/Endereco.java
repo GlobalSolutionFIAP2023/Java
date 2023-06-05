@@ -21,10 +21,6 @@ public class Endereco {
         this.complemento = complemento;
         this.cidade = cidade;
     }
-    public Endereco(int idEndereco, String cep){
-        this.idEndereco = idEndereco;
-        this.cep = cep;
-    }
     public Endereco(){}
 
 
