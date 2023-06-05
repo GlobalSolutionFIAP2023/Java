@@ -31,6 +31,20 @@ public class SistemaDePlantio {
 
 
     // Métodos
+    // Adiciona um item a lista.
+    public List<SistemaDePlantio> Adicionar(List<SistemaDePlantio> sistemasDePlantio, SistemaDePlantio sistemaDePlantio){
+        sistemasDePlantio.add(sistemaDePlantio);
+        return sistemasDePlantio;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<SistemaDePlantio> Remover(List<SistemaDePlantio> sistemasDePlantio, SistemaDePlantio sistemaDePlantio){
+        sistemasDePlantio.remove(sistemaDePlantio);
+        return sistemasDePlantio;
+    }
+    public List<SistemaDePlantio> Remover(List<SistemaDePlantio> sistemasDePlantio){
+        sistemasDePlantio.clear();
+        return sistemasDePlantio;
+    }
 
 
 

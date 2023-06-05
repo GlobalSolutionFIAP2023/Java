@@ -2,7 +2,7 @@ package beans;
 
 import java.util.List;
 
-public class Tecnica {
+public abstract class Tecnica {
     // Atributos
     private int idTecnica;
     private String nome;
@@ -21,13 +21,18 @@ public class Tecnica {
         this.requisitos = requisitos;
         this.materiaisNecessarios = materiaisNecessarios;
     }
+    public Tecnica(int idTecnica, String nome){
+        this.idTecnica = idTecnica;
+        this.nome = nome;
+    }
     public Tecnica(){}
 
 
 
 
     // Métodos
-
+    // Altera o nome do objeto.
+    public abstract String AlterarNome(String nomeNovo);
 
 
 

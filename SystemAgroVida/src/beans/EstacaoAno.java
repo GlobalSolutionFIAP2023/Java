@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.List;
+
 public class EstacaoAno {
     // Atributos
     private int idEstacaoAno;
@@ -22,6 +24,25 @@ public class EstacaoAno {
         this.incidenciaSolarMedia = incidenciaSolarMedia;
     }
     public EstacaoAno(){}
+
+
+
+
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<EstacaoAno> Adicionar(List<EstacaoAno> estacoesAno, EstacaoAno estacaoAno){
+        estacoesAno.add(estacaoAno);
+        return estacoesAno;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<EstacaoAno> Remover(List<EstacaoAno> estacoesAno, EstacaoAno estacaoAno){
+        estacoesAno.remove(estacaoAno);
+        return estacoesAno;
+    }
+    public List<EstacaoAno> Remover(List<EstacaoAno> estacoesAnos){
+        estacoesAnos.clear();
+        return estacoesAnos;
+    }
 
 
 

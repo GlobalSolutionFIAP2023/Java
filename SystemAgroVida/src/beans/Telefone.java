@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.List;
+
 public class Telefone {
     // Atributos
     private int idTelefone;
@@ -19,7 +21,30 @@ public class Telefone {
         this.ddi = ddi;
         this.operadora = operadora;
     }
+    public Telefone(int idTelefone, int numero){
+        this.idTelefone = numero;
+        this.numero = numero;
+    }
     public Telefone(){}
+
+
+
+
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<Telefone> Adicionar(List<Telefone> telefones, Telefone telefone){
+        telefones.add(telefone);
+        return telefones;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<Telefone> Remover(List<Telefone> telefones, Telefone telefone){
+        telefones.remove(telefone);
+        return telefones;
+    }
+    public List<Telefone> Remover(List<Telefone> telefones){
+        telefones.clear();
+        return telefones;
+    }
 
 
 

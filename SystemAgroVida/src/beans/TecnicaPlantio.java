@@ -34,11 +34,12 @@ public class TecnicaPlantio extends Tecnica {
 
 
     // Métodos
+    // Adiciona um item a uma lista.
     public List<TecnicaPlantio> Adicionar (List<TecnicaPlantio> tecnicasPlantio, TecnicaPlantio tecnicaPlantio){
         tecnicasPlantio.add(tecnicaPlantio);
         return tecnicasPlantio;
     }
-    // Método com sobrecarga - Um Remove um item especifico o outro remove todos os itens
+    // Método com sobrecarga - Um Remove um item especifico o outro remove todos os itens.
     public List<TecnicaPlantio> Remover (List<TecnicaPlantio> tecnicasPlantio, TecnicaPlantio tecnicaPlantio){
         tecnicasPlantio.remove(tecnicaPlantio);
         return tecnicasPlantio;
@@ -47,7 +48,13 @@ public class TecnicaPlantio extends Tecnica {
         tecnicasPlantio.clear();
         return tecnicasPlantio;
     }
-
+    // Método com sobrescrita - Altera o nome do objeto.
+    @Override
+    public String AlterarNome(String nomeNovo){
+        this.setNome(nomeNovo);
+        String texto = "Nome alterado com sucesso, novo nome é: " + this.getNome();
+        return texto;
+    }
 
 
 

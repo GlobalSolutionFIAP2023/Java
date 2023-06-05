@@ -18,7 +18,36 @@ public class TecnicaSustentavel extends Tecnica {
         this.componentes = componentes;
         this.periodo = periodo;
     }
+    public TecnicaSustentavel(int idTecnica, String nome){
+        super(idTecnica, nome);
+    }
     public TecnicaSustentavel(){}
+
+
+
+
+    // Métodos
+    // Aiciona um item a uma lista.
+    public List<TecnicaSustentavel> Adicionar (List<TecnicaSustentavel> tecnicasSustentaveis, TecnicaSustentavel tecnicaSustentavel){
+        tecnicasSustentaveis.add(tecnicaSustentavel);
+        return tecnicasSustentaveis;
+    }
+    // Método com sobrecarga - Um Remove um item especifico o outro remove todos os itens.
+    public List<TecnicaSustentavel> Remover (List<TecnicaSustentavel> tecnicasSustentaveis, TecnicaSustentavel tecnicaSustentavel){
+        tecnicasSustentaveis.remove(tecnicaSustentavel);
+        return tecnicasSustentaveis;
+    }
+    public List<TecnicaSustentavel> Remover (List<TecnicaSustentavel> tecnicasSustentaveis){
+        tecnicasSustentaveis.clear();
+        return tecnicasSustentaveis;
+    }
+    // Método com sobrescrista - Altera o nome do objeto.
+    @Override
+    public String AlterarNome(String nomeNovo){
+        this.setNome(nomeNovo);
+        String texto = "Nome alterado com sucesso, novo nome é: " + this.getNome();
+        return texto;
+    }
 
 
 

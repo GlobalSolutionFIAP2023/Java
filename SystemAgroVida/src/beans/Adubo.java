@@ -24,11 +24,12 @@ public class Adubo {
 
 
     // Métodos
+    // Adiciona um item a uma lista.
     public List<Adubo> Adicionar(List<Adubo> adubos, Adubo adubo){
         adubos.add(adubo);
         return adubos;
     }
-    // Método com sobrecarga
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
     public List<Adubo> Remover(List<Adubo> adubos, Adubo adubo){
         adubos.remove(adubo);
         return adubos;

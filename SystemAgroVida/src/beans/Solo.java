@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.List;
+
 public class Solo {
     // Atributos
     private int idSolo;
@@ -16,6 +18,25 @@ public class Solo {
         this.descricao = descricao;
     }
     public Solo(){}
+
+
+
+
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<Solo> Adicionar(List<Solo> solos, Solo solo){
+        solos.add(solo);
+        return solos;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<Solo> Remover(List<Solo> solos, Solo solo){
+        solos.remove(solo);
+        return solos;
+    }
+    public List<Solo> Remover(List<Solo> solos){
+        solos.clear();
+        return solos;
+    }
 
 
 

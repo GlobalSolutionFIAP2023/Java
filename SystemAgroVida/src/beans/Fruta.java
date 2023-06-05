@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.List;
+
 public class Fruta {
     // Atributos
     private int idFruta;
@@ -20,6 +22,25 @@ public class Fruta {
         this.detalhesDoCultivo = detalhesDoCultivo;
     }
     public Fruta(){}
+
+
+
+
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<Fruta> Adicionar(List<Fruta> frutas, Fruta fruta){
+        frutas.add(fruta);
+        return frutas;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<Fruta> Remover(List<Fruta> frutas, Fruta fruta){
+        frutas.remove(fruta);
+        return frutas;
+    }
+    public List<Fruta> Remover(List<Fruta> frutas){
+        frutas.clear();
+        return frutas;
+    }
 
 
 

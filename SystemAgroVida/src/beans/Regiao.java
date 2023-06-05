@@ -28,6 +28,25 @@ public class Regiao {
 
 
 
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<Regiao> Adicionar(List<Regiao> regioes, Regiao regiao){
+        regioes.add(regiao);
+        return regioes;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<Regiao> Remover(List<Regiao> regioes, Regiao regiao){
+        regioes.remove(regiao);
+        return regioes;
+    }
+    public List<Regiao> Remover(List<Regiao> regioes){
+        regioes.clear();
+        return regioes;
+    }
+
+
+
+
     // GetterSetter
     public int getIdRegiao() {
         return idRegiao;

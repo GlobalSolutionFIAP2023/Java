@@ -26,6 +26,25 @@ public class InseticidaNatural {
 
 
 
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<InseticidaNatural> Adicionar(List<InseticidaNatural> inseticidasNaturais, InseticidaNatural inseticidaNatural){
+        inseticidasNaturais.add(inseticidaNatural);
+        return inseticidasNaturais;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<InseticidaNatural> Remover(List<InseticidaNatural> inseticidasNaturais, InseticidaNatural inseticidaNatural){
+        inseticidasNaturais.remove(inseticidaNatural);
+        return inseticidasNaturais;
+    }
+    public List<InseticidaNatural> Remover(List<InseticidaNatural> inseticidasNaturais){
+        inseticidasNaturais.clear();
+        return inseticidasNaturais;
+    }
+
+
+
+
     // GetterSetter
     public int getIdInseticidaNatural() {
         return idInseticidaNatural;

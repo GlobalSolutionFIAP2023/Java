@@ -2,7 +2,7 @@ package beans;
 
 import java.util.List;
 
-public class Usuario {
+public abstract class Usuario {
     // Atributos
     private String nome;
     private String sobreNome;
@@ -24,6 +24,13 @@ public class Usuario {
         this.endereco = endereco;
     }
     public Usuario(){}
+
+
+
+
+    // Métodos
+    // Altera o nome do objeto.
+    public abstract String AlterarNome(String nomeNovo);
 
 
 

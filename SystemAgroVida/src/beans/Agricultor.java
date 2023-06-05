@@ -13,7 +13,6 @@ public class Agricultor extends Usuario {
 
 
     // Construtores
-
     public Agricultor(String nome, String sobreNome, int idade, String genero, List<Telefone> telefones, Endereco endereco, int idAgricultor, String objetivo, String experiencia, List<TecnicaSustentavel> tecnicasSustentaveis) {
         super(nome, sobreNome, idade, genero, telefones, endereco);
         this.idAgricultor = idAgricultor;
@@ -22,6 +21,32 @@ public class Agricultor extends Usuario {
         this.tecnicasSustentaveis = tecnicasSustentaveis;
     }
     public Agricultor(){}
+
+
+
+
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<Agricultor> Adicionar(List<Agricultor> agricultores, Agricultor agricultor){
+        agricultores.add(agricultor);
+        return agricultores;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<Agricultor> Remover(List<Agricultor> agricultores, Agricultor agricultor){
+        agricultores.remove(agricultor);
+        return agricultores;
+    }
+    public List<Agricultor> Remover(List<Agricultor> agricultores){
+        agricultores.clear();
+        return agricultores;
+    }
+    // Método com sobrescrita - Altera o nome do objeto.
+    @Override
+    public String AlterarNome(String nomeNovo){
+        this.setNome(nomeNovo);
+        String texto = "Nome alterado com sucesso, novo nome é: " + this.getNome();
+        return texto;
+    }
 
 
 

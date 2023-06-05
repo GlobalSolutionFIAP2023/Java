@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.List;
+
 public class Endereco {
     // Atributos
     private int idEndereco;
@@ -19,7 +21,30 @@ public class Endereco {
         this.complemento = complemento;
         this.cidade = cidade;
     }
+    public Endereco(int idEndereco, String cep){
+        this.idEndereco = idEndereco;
+        this.cep = cep;
+    }
     public Endereco(){}
+
+
+
+
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<Endereco> Adicionar(List<Endereco> enderecos, Endereco endereco){
+        enderecos.add(endereco);
+        return enderecos;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<Endereco> Remover(List<Endereco> enderecos, Endereco endereco){
+        enderecos.remove(endereco);
+        return enderecos;
+    }
+    public List<Endereco> Remover(List<Endereco> enderecos){
+        enderecos.clear();
+        return enderecos;
+    }
 
 
 

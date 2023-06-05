@@ -1,5 +1,7 @@
 package beans;
 
+import java.util.List;
+
 public class Estado {
     // Atributos
     private int idEstado;
@@ -16,6 +18,25 @@ public class Estado {
         this.sigla = sigla;
     }
     public Estado(){}
+
+
+
+
+    // Métodos
+    // Adiciona um item a uma lista.
+    public List<Estado> Adicionar(List<Estado> estados, Estado estado){
+        estados.add(estado);
+        return estados;
+    }
+    // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
+    public List<Estado> Remover(List<Estado> estados, Estado estado){
+        estados.remove(estado);
+        return estados;
+    }
+    public List<Estado> Remover(List<Estado> estados){
+        estados.clear();
+        return estados;
+    }
 
 
 
