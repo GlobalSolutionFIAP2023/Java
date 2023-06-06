@@ -9,20 +9,20 @@ public class SistemaDePlantio {
     private String descricao;
     private Double area;
     private Regiao regiao;
-    private Agricultor agricultor;
+    private Cliente cliente;
     private List<TecnicaPlantio> tecnicasPlantios;
 
 
 
 
     // Construtores
-    public SistemaDePlantio(int idSistemaDePlantio, String nome, String descricao, Double area, Regiao regiao, Agricultor agricultor, List<TecnicaPlantio> tecnicasPlantios) {
+    public SistemaDePlantio(int idSistemaDePlantio, String nome, String descricao, Double area, Regiao regiao, Cliente cliente, List<TecnicaPlantio> tecnicasPlantios) {
         this.idSistemaDePlantio = idSistemaDePlantio;
         this.nome = nome;
         this.descricao = descricao;
         this.area = area;
         this.regiao = regiao;
-        this.agricultor = agricultor;
+        this.cliente = cliente;
         this.tecnicasPlantios = tecnicasPlantios;
     }
     public SistemaDePlantio(){}
@@ -90,12 +90,12 @@ public class SistemaDePlantio {
         this.regiao = regiao;
     }
 
-    public Agricultor getAgricultor() {
-        return agricultor;
+    public Cliente getAgricultor() {
+        return cliente;
     }
 
-    public void setAgricultor(Agricultor agricultor) {
-        this.agricultor = agricultor;
+    public void setAgricultor(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public List<TecnicaPlantio> getTecnicasPlantios() {

@@ -2,9 +2,9 @@ package beans;
 
 import java.util.List;
 
-public class Agricultor extends Usuario {
+public class Cliente extends Usuario {
     // Atributos
-    private int idAgricultor;
+    private int idCliente;
     private String objetivo;
     private String experiencia;
     private List<TecnicaSustentavel> tecnicasSustentaveis;
@@ -13,32 +13,32 @@ public class Agricultor extends Usuario {
 
 
     // Construtores
-    public Agricultor(String nome, String sobreNome, int idade, String genero, List<Telefone> telefones, Endereco endereco, int idAgricultor, String objetivo, String experiencia, List<TecnicaSustentavel> tecnicasSustentaveis) {
+    public Cliente(String nome, String sobreNome, int idade, String genero, List<Telefone> telefones, Endereco endereco, int idCliente, String objetivo, String experiencia, List<TecnicaSustentavel> tecnicasSustentaveis) {
         super(nome, sobreNome, idade, genero, telefones, endereco);
-        this.idAgricultor = idAgricultor;
+        this.idCliente = idCliente;
         this.objetivo = objetivo;
         this.experiencia = experiencia;
         this.tecnicasSustentaveis = tecnicasSustentaveis;
     }
-    public Agricultor(){}
+    public Cliente(){}
 
 
 
 
     // Métodos
     // Adiciona um item a uma lista.
-    public List<Agricultor> Adicionar(List<Agricultor> agricultores, Agricultor agricultor){
-        agricultores.add(agricultor);
-        return agricultores;
+    public List<Cliente> Adicionar(List<Cliente> clientes, Cliente cliente){
+        clientes.add(cliente);
+        return clientes;
     }
     // Método com sobrecarga - Remove um item específico da lista e o outro Remove todos os itens.
-    public List<Agricultor> Remover(List<Agricultor> agricultores, Agricultor agricultor){
-        agricultores.remove(agricultor);
-        return agricultores;
+    public List<Cliente> Remover(List<Cliente> clientes, Cliente cliente){
+        clientes.remove(cliente);
+        return clientes;
     }
-    public List<Agricultor> Remover(List<Agricultor> agricultores){
-        agricultores.clear();
-        return agricultores;
+    public List<Cliente> Remover(List<Cliente> clientes){
+        clientes.clear();
+        return clientes;
     }
     // Método com sobrescrita - Altera o nome do objeto.
     @Override
@@ -52,12 +52,12 @@ public class Agricultor extends Usuario {
 
 
     // GetterSetter
-    public int getIdAgricultor() {
-        return idAgricultor;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setIdAgricultor(int idAgricultor) {
-        this.idAgricultor = idAgricultor;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public String getObjetivo() {
