@@ -138,30 +138,32 @@ public class Main {
         System.out.println("\nDeseja continuar?");
         System.out.println("1 - Sim\n2 - Não");
         int op = scan.nextInt();
-        if (op == 1) {
-            System.out.println("\nQual técnica você gostaria de conhecer:\n1 - Reciclagem\n2 - Captação de Água da Chuva\n3 - Restos de alimentos para compostagem\n4 - Inseticida Natural\n5 - Horta Orgânica");
-            int op1 = scan.nextInt();
-            if (op1 == 1) {
-                System.out.println("\nQual técnica de reciclagem você deseja conhecer:\n1 - Coleta seletiva dos resíduos\n2 - Reutilizar Objetos\n3 - Embalagens Recicláveis");
-                int op2 = scan.nextInt();
-                if (op2 == 1) {
-                    System.out.println("\n" + ColetSelResid.getDescricao());
-                } else if (op2 == 2) {
-                    System.out.println("\n" + ReutilObj.getDescricao());
-                } else if (op2 == 3) {
-                    System.out.println("\n" + EmbRecic.getDescricao());
+        while (op != 2) {
+                System.out.println("\nQual técnica você gostaria de conhecer:\n1 - Reciclagem\n2 - Captação de Água da Chuva\n3 - Restos de alimentos para compostagem\n4 - Inseticida Natural\n5 - Horta Orgânica");
+                int op1 = scan.nextInt();
+                if (op1 == 1) {
+                    System.out.println("\nQual técnica de reciclagem você deseja conhecer:\n1 - Coleta seletiva dos resíduos\n2 - Reutilizar Objetos\n3 - Embalagens Recicláveis");
+                    int op2 = scan.nextInt();
+                    if (op2 == 1) {
+                        System.out.println("\n" + ColetSelResid.getDescricao());
+                    } else if (op2 == 2) {
+                        System.out.println("\n" + ReutilObj.getDescricao());
+                    } else if (op2 == 3) {
+                        System.out.println("\n" + EmbRecic.getDescricao());
+                    }
+                } else if (op1 == 2) {
+                    System.out.println("\n" + CapAguChu.getDescricao());
+                } else if (op1 == 3) {
+                    System.out.println("\n" + RestAlimComp.getDescricao());
+                } else if (op1 == 4) {
+                    System.out.println("\n" + InsetNat.getDescricao());
+                } else if (op1 == 5) {
+                    System.out.println("\n" + HortOrg.getDescricao());
                 }
-            } else if (op1 == 2) {
-                System.out.println("\n" + CapAguChu.getDescricao());
-            } else if (op1 == 3) {
-                System.out.println("\n" + RestAlimComp.getDescricao());
-            } else if (op1 == 4) {
-                System.out.println("\n" + InsetNat.getDescricao());
-            } else if (op1 == 5) {
-                System.out.println("\n" + HortOrg.getDescricao());
-            }
-        } else if (op == 2) {
-            System.out.println("\nAgradecemos pela visita! Volte quando precisar mais informação para seu plantio!");
+            System.out.println("\nDeseja conhecer outra técnica?");
+            System.out.println("1 - Sim\n2 - Não");
+            op = scan.nextInt();
         }
+        System.out.println("\nAgradecemos pela visita! Volte quando precisar mais informação para seu plantio!");
     }
 }
