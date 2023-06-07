@@ -17,21 +17,25 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         Random random = new Random();
 
+        // Instanciando uma lista de histórico e uma de favoritos
+        List<TecnicaSustentavel> historico = new ArrayList<TecnicaSustentavel>();
+        List<TecnicaSustentavel> favoritas = new ArrayList<TecnicaSustentavel>();
+
         // Instanciando as Técnicas Sustentáveis
         TecnicaSustentavel ColetSelResid = new TecnicaSustentavel();
         ColetSelResid.setIdTecnica(random.nextInt(101));
         ColetSelResid.setNome("Coleta Seletiva de Resíduos");
-        ColetSelResid.setDescricao("[REALIZAR COLETA SELETIVA DOS RESÍDUOS] => método de coletar e separar os resíduos de acordo com suas características. Ou seja, se os resíduos possuem características similares são segregados e coletados juntos (papel, plástico, vidro, metal e resíduo orgânico). Isso ajuda a reciclagem, tornando-a mais fácil e viável economicamente.");
+        ColetSelResid.setDescricao("Método de coletar e separar os resíduos de acordo com suas características. Ou seja, se os resíduos possuem características similares são segregados e coletados juntos (papel, plástico, vidro, metal e resíduo orgânico). Isso ajuda a reciclagem, tornando-a mais fácil e viável economicamente.");
 
         TecnicaSustentavel ReutilObj = new TecnicaSustentavel();
         ReutilObj.setIdTecnica(random.nextInt(101));
         ReutilObj.setNome("Reutilizar Objetos");
-        ReutilObj.setDescricao("[REUTILIZAR OBJETOS] => Sabe aquele pote de requeijão, que é de vidro? Então, você pode reutilizar ele como um copo. Adote esse tipo de pensamento sobre como utilizar uma coisa em outra, tornando o mundo mais sustentável.");
+        ReutilObj.setDescricao("Sabe aquele pote de requeijão, que é de vidro? Então, você pode reutilizar ele como um copo. Adote esse tipo de pensamento sobre como utilizar uma coisa em outra, tornando o mundo mais sustentável.");
 
         TecnicaSustentavel EmbRecic = new TecnicaSustentavel();
         EmbRecic.setIdTecnica(random.nextInt(101));
         EmbRecic.setNome("Embalagens Recicláveis");
-        EmbRecic.setDescricao("[EMBALAGENS RECICLÁVEIS] => Opte por usar embalagens recicláveis, que possam ser reutilizadas, após serem lavadas.");
+        EmbRecic.setDescricao("Opte por usar embalagens recicláveis, que possam ser reutilizadas, após serem lavadas.");
 
         TecnicaSustentavel CapAguChu = new TecnicaSustentavel();
         CapAguChu.setIdTecnica(random.nextInt(101));
@@ -41,7 +45,7 @@ public class Main {
         TecnicaSustentavel RestAlimComp = new TecnicaSustentavel();
         RestAlimComp.setIdTecnica(random.nextInt(101));
         RestAlimComp.setNome("Restos de Alimentos para Compostagem");
-        RestAlimComp.setDescricao("Existem várias possibilidades de reaproveitamento dos resíduos de alimentos, e a forma mais comum é através da compostagem doméstica, contribuindo para reduzir gases do efeito estufa e o lixo orgânico.\n\n  A compostagem é um processo de reciclagem do lixo orgânico, transforma a matéria orgânica encontrada no lixo em adubo natural, que pode ser usado na agricultura, em jardins e plantas, substituindo o uso de produtos químicos.");
+        RestAlimComp.setDescricao("Existem várias possibilidades de reaproveitamento dos resíduos de alimentos, e a forma mais comum é através da compostagem doméstica, contribuindo para reduzir gases do efeito estufa e o lixo orgânico.\n\nA compostagem é um processo de reciclagem do lixo orgânico, transforma a matéria orgânica encontrada no lixo em adubo natural, que pode ser usado na agricultura, em jardins e plantas, substituindo o uso de produtos químicos.");
 
         TecnicaSustentavel InsetNat = new TecnicaSustentavel();
         InsetNat.setIdTecnica(random.nextInt(101));
@@ -135,10 +139,17 @@ public class Main {
         System.out.println("Experiência: " + cliente1.getExperiencia());
         System.out.println("Técnica Sustentável: " + cliente1.getTecnicasSustentaveis().get(0).getNome());
 
-        System.out.println("\nDeseja continuar?");
-        System.out.println("1 - Sim\n2 - Não");
-        int op = scan.nextInt();
+        // Iniciando o Menu
+        int op = 0;
         while (op != 2) {
+
+            // Opções de ações
+            System.out.println("\nComo você deseja prosseguir?");
+            System.out.println("1 - Lista de Técnicas\n2 - Encerrar o programa\n3 - Ver histórico\n4 - Lista de favoritas");
+            op = scan.nextInt();
+
+            // Lista de Técnicas
+            if (op == 1) {
                 System.out.println("\nQual técnica você gostaria de conhecer:\n1 - Reciclagem\n2 - Captação de Água da Chuva\n3 - Restos de alimentos para compostagem\n4 - Inseticida Natural\n5 - Horta Orgânica");
                 int op1 = scan.nextInt();
                 if (op1 == 1) {
@@ -146,24 +157,108 @@ public class Main {
                     int op2 = scan.nextInt();
                     if (op2 == 1) {
                         System.out.println("\n" + ColetSelResid.getDescricao());
+                        // Adiciona ao histórico
+                        ColetSelResid.Adicionar(historico, ColetSelResid);
+
+                        // Adiciona aos favoritos
+                        System.out.println("\nDeseja adicionar aos favoritos? [1 - Sim / 2 - Não]");
+                        int fav = scan.nextInt();
+                        if (fav == 1){
+                            ColetSelResid.Adicionar(favoritas, ColetSelResid);
+                        }
                     } else if (op2 == 2) {
                         System.out.println("\n" + ReutilObj.getDescricao());
+                        // Adiciona ao histórico
+                        ReutilObj.Adicionar(historico, ReutilObj);
+
+                        // Adiciona aos favoritos
+                        System.out.println("\nDeseja adicionar aos favoritos? [1 - Sim / 2 - Não]");
+                        int fav = scan.nextInt();
+                        if (fav == 1){
+                            ReutilObj.Adicionar(favoritas, ReutilObj);
+                        }
                     } else if (op2 == 3) {
                         System.out.println("\n" + EmbRecic.getDescricao());
+                        // Adiciona ao histórico
+                        EmbRecic.Adicionar(historico, EmbRecic);
+
+                        // Adiciona aos favoritos
+                        System.out.println("\nDeseja adicionar aos favoritos? [1 - Sim / 2 - Não]");
+                        int fav = scan.nextInt();
+                        if (fav == 1){
+                            EmbRecic.Adicionar(favoritas, EmbRecic);
+                        }
                     }
                 } else if (op1 == 2) {
                     System.out.println("\n" + CapAguChu.getDescricao());
+                    // Adiciona ao histórico
+                    CapAguChu.Adicionar(historico, CapAguChu);
+
+                    // Adiciona aos favoritos
+                    System.out.println("\nDeseja adicionar aos favoritos? [1 - Sim / 2 - Não]");
+                    int fav = scan.nextInt();
+                    if (fav == 1){
+                        CapAguChu.Adicionar(favoritas, CapAguChu);
+                    }
                 } else if (op1 == 3) {
                     System.out.println("\n" + RestAlimComp.getDescricao());
+                    // Adiciona ao histórico
+                    RestAlimComp.Adicionar(historico, RestAlimComp);
+
+                    // Adiciona aos favoritos
+                    System.out.println("\nDeseja adicionar aos favoritos? [1 - Sim / 2 - Não]");
+                    int fav = scan.nextInt();
+                    if (fav == 1){
+                        RestAlimComp.Adicionar(favoritas, RestAlimComp);
+                    }
                 } else if (op1 == 4) {
                     System.out.println("\n" + InsetNat.getDescricao());
+                    // Adiciona ao histórico
+                    InsetNat.Adicionar(historico, InsetNat);
+
+                    // Adiciona aos favoritos
+                    System.out.println("\nDeseja adicionar aos favoritos? [1 - Sim / 2 - Não]");
+                    int fav = scan.nextInt();
+                    if (fav == 1){
+                        InsetNat.Adicionar(favoritas, InsetNat);
+                    }
                 } else if (op1 == 5) {
                     System.out.println("\n" + HortOrg.getDescricao());
+                    // Adiciona ao histórico
+                    HortOrg.Adicionar(historico, HortOrg);
+
+                    // Adiciona aos favoritos
+                    System.out.println("\nDeseja adicionar aos favoritos? [1 - Sim / 2 - Não]");
+                    int fav = scan.nextInt();
+                    if (fav == 1){
+                        HortOrg.Adicionar(favoritas, HortOrg);
+                    }
                 }
-            System.out.println("\nDeseja conhecer outra técnica?");
-            System.out.println("1 - Sim\n2 - Não");
-            op = scan.nextInt();
+            }
+            // Ver histórico
+            if (op == 3) {
+                System.out.println("\nHISTÓRICO:\n");
+                if (historico.isEmpty()){
+                    System.out.println("Seu histórico está vazio!!");
+                } else {
+                    for (TecnicaSustentavel tecSust : historico) {
+                        System.out.println("\n[" + tecSust.getNome() + "]\n" + tecSust.getDescricao() + "\n\n");
+                    }
+                }
+            }
+            // Lista de favoritos
+            if (op == 4) {
+                System.out.println("\nTÉCNICAS FAVORITAS:\n");
+                if (favoritas.isEmpty()){
+                    System.out.println("Sua lista de favoritas está vazia!!");
+                } else {
+                    for (TecnicaSustentavel tecSust : favoritas) {
+                        System.out.println("\n[" + tecSust.getNome() + "]\n" + tecSust.getDescricao() + "\n\n");
+                    }
+                }
+            }
         }
+        // Encerrando o Programa
         System.out.println("\nAgradecemos pela visita! Volte quando precisar mais informação para seu plantio!");
     }
 }
